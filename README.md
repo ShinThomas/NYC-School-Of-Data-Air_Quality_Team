@@ -18,6 +18,8 @@ Add sources as we evaluate them.
 Document relevant units, update frequency, access requirements, and usage restrictions for selected datasets.
 
 ## Repository Structure
+
+```text
 ├── README.md
 ├── .gitignore
 ├── requirements.txt
@@ -29,12 +31,15 @@ Document relevant units, update frequency, access requirements, and usage restri
 ├── src/
 ├── outputs/
 └── docs/
+```
 
-- data/: Dataset documentation and local data files.
-- notebooks/: Exploratory analysis and working notebooks.
-- src/: Reusable data collection, cleaning, and analysis code.
-- outputs/: Generated figures, tables, and other results.
-- docs/: Project planning, decisions, and supporting documentation.
+| Folder | Purpose |
+|--------|---------|
+| `data/` | Dataset documentation, raw data, and cleaned data |
+| `notebooks/` | Exploratory analysis and working notebooks |
+| `src/` | Reusable collection, cleaning, and analysis code |
+| `outputs/` | Generated figures, tables, and results |
+| `docs/` | Project planning, decisions, and supporting documentation |
 
 
 ## Getting Started
