@@ -58,7 +58,7 @@ To be updated as analysis progresses.
 
 ## Team
 
-| Name               | Title               | Email               |
+| Name               | Role                | Email               |
 |--------------------|---------------------|---------------------|
 | Thomas Shin        | Project Manager     | thshin@bu.edu       |
 | Sam Cowan          | Project Lead        | samc@bu.edu         |
