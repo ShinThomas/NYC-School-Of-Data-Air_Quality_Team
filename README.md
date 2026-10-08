@@ -66,9 +66,3 @@ To be updated as analysis progresses.
 | Miriam Dulin       | Developer           | mdulin@bu.edu       |
 | Kyle Yang          | Developer           | kyang21@bu.edu      |
 | Daniel Lin         | Developer           | lindan18@bu.edu     |
-
-
-
-
-## License
-To be selected. Dataset licenses and terms apply separately.
