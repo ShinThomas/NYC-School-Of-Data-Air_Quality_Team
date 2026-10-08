@@ -52,12 +52,18 @@ Planned steps:
 To be updated as analysis progresses.
 
 ## Team
-- [Thomas Shin  — Project Manager]
-- [Sam Cowan    — Project Lead]
-- [Alexis Cruz  — Teammate]
-- [Miriam Dulin — Teammate]
-- [Kyle Yang    — Teammate]
-- [Daniel Lin   — Teammate]
+
+| Name               | Title               | Email               |
+|--------------------|---------------------|---------------------|
+| Thomas Shin        | Project Manager     | thshin@bu.edu       |
+| Sam Cowan          | Project Lead        | samc@bu.edu         |
+| Alexis Cruz        | Developer           | acruz185@bu.edu     |
+| Miriam Dulin       | Developer           | mdulin@bu.edu       |
+| Kyle Yang          | Developer           | kyang21@bu.edu      |
+| Daniel Lin         | Developer           | lindan18@bu.edu     |
+
+
+
 
 ## License
 To be selected. Dataset licenses and terms apply separately.
