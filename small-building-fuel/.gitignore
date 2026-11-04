@@ -1,0 +1,8 @@
+# Virtual environments
+.venv*/
+venv/
+
+# Data files (too large for GitHub; see README for download links)
+*.csv
+
+__pycache__/
