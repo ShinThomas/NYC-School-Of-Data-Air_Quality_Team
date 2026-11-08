@@ -76,6 +76,8 @@ Each entry in `concentrations` has these fields:
 | `pollutant` | e.g. PM2.5 |
 | `value` | The number as written in the document |
 | `units` | e.g. µg/m³, ppm |
+| `scenario` | existing, no-action, with-action, or not stated |
+| `analysis_year` | Year the value applies to, e.g. the build year |
 | `value_type` | background, project increment, or total |
 | `averaging_period` | e.g. 24-hour, annual |
 | `location` | Receptor or monitoring location, if given |

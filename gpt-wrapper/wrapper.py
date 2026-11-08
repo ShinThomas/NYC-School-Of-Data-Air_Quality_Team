@@ -40,6 +40,11 @@ class PollutantConcentration(BaseModel):
     pollutant: str = Field(description="Pollutant name, e.g. PM2.5, NO2")
     value: float = Field(description="Concentration as a number, without units")
     units: str = Field(description="Units of the value, e.g. µg/m³, ppm")
+    scenario: Literal["existing", "no-action", "with-action", "not stated"] = Field(
+        description="Which condition the value describes: existing conditions, the future No-Action condition "
+        "(without the project), or the future With-Action condition (with the project)"
+    )
+    analysis_year: Optional[int] = Field(None, description="Year the value applies to, e.g. the build year 2030")
     value_type: Optional[str] = Field(
         None,
         description="What the number represents: background, project increment, or total (background + project)",
@@ -83,7 +88,9 @@ PROMPT = (
     "If a field is not present, return null (or an empty list). "
     "For significant_adverse_impact, report the document's own conclusion, not your own judgment. "
     "For concentrations, copy numbers exactly as written; do not calculate, convert units, or round. "
-    "Keep background, project increment, and total values as separate entries."
+    "Keep background, project increment, and total values as separate entries. "
+    "When a table has separate columns for existing, No-Action, and With-Action conditions, "
+    "make one entry per column and set scenario and analysis_year for each."
 )
 
 
