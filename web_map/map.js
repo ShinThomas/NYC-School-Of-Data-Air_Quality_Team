@@ -14,6 +14,7 @@ const map = new maplibregl.Map({
   zoom: 9, // starting zoom
 });
 
+
 map.on("load", async () => {
   map.addSource("ceqr", {
     type: "geojson",
@@ -55,6 +56,7 @@ map.on("click", "ceqr", (e) => {
     .setHTML(`
       <h3>${properties.project_name}</h3>
       <p>${properties.project_status}</p>
+      <p>Model info and other stuff would go here</p>
     `)
     .addTo(map);
 
