@@ -62,7 +62,7 @@ cleaned_merge.drop_duplicates(subset="BBL")
 print(cleaned_merge.shape)
 
 import geopandas as gpd
-from shapely.geometry import Point
+from shapely.geometry import Point, Polygon
 
 gdf = gpd.GeoDataFrame(cleaned_merge, geometry=[Point(xy) for xy in zip(cleaned_merge['longitude'], cleaned_merge['latitude'])])
 
@@ -72,3 +72,31 @@ with open("ceqr.geojson", "w") as f:
     f.write(geojson_str)
 
 print("Points written to ceqr.geojson")
+
+
+tax_lots = pd.read_csv("TAX_LOT_POLYGON.csv")
+
+merged_geometry = pd.merge(left=merged, right=tax_lots, how="left", left_on="BBL", right_on="BBL")
+
+merged_geometry = merged_geometry[["project_id", "project_name", "project_status", "ceqr_number", "borough", "current_milestone_date", "the_geom"]]
+
+from shapely import wkt
+
+merged_geometry = merged_geometry.dropna()
+
+polygons = []
+
+for _, row in merged_geometry.iterrows():
+    P = wkt.loads(str(row["the_geom"]))
+    polygons.append(P)
+
+merged_geometry["geometry"] = polygons
+
+gpd_tax_lots = gpd.GeoDataFrame(merged_geometry, geometry=merged_geometry["geometry"])
+
+geojson_shapes_str = gpd_tax_lots.to_json()
+
+with open("ceqr_shapes.geojson", "w") as f:
+    f.write(geojson_shapes_str)
+
+print("Tax lot shapefiles written to ceqr_shapes.json")

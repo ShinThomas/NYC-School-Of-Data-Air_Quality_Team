@@ -7,6 +7,9 @@ async function getData(url) {
 
 const ceqr_data = await getData("data_cleaning/ceqr.geojson");
 
+const ceqr_data_shapes = await getData("data_cleaning/ceqr_shapes.geojson");
+
+
 const map = new maplibregl.Map({
   container: "map", // container id
   style: "https://maps.gishub.org/styles/openstreetmap.json", // style URL
@@ -32,6 +35,21 @@ map.on("load", async () => {
       "circle-stroke-color": "#fff",
     }
   });
+  map.addSource("ceqr_shapes", {
+    type: "geojson",
+    data: ceqr_data_shapes,
+  });
+
+  map.addLayer({
+    id: "ceqr_shapes",
+    type: "fill",
+    source: "ceqr_shapes",
+    layout: {'visibility': 'none'},
+    paint: {
+            'fill-color': '#088',
+            'fill-opacity': 0.8
+        }
+  });
 });
 
 map.on("click", "ceqr", (e) => {
@@ -49,6 +67,9 @@ map.on("click", "ceqr", (e) => {
     curve: 1.4,
     essential: true
   });
+  
+  const v = map.getLayoutProperty('ceqr_shapes', 'visibility');
+  map.setLayoutProperty('ceqr_shapes', 'visibility', v === 'visible' ? 'none' : 'visible');
 
   // Display information
   new maplibregl.Popup()
@@ -59,5 +80,19 @@ map.on("click", "ceqr", (e) => {
       <p>Model info and other stuff would go here</p>
     `)
     .addTo(map);
-
 });
+
+
+// On double click, zoom back out and toggle shapes off
+
+/* On zoom, display: 
+Trees
+Law 84 (color coded??????)
+CATS
+traffic volume
+project status
+model predictoin
+EIS/EAS data
+Local sensor
+TRAPPA data*
+*/
