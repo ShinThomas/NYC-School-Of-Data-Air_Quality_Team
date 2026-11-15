@@ -98,3 +98,93 @@ Each entry in `concentrations` has these fields:
   current Flash model listed in AI Studio.
 - **Free tier limits.** The free tier has rate limits. If you get a quota
   error, wait a minute and try again.
+
+## Running on a folder of PDFs
+
+```
+python batch.py "E:\path\to\pdfs" --out results
+```
+
+`batch.py` processes every PDF in the folder (subfolders included) one at a
+time and writes one JSON file per PDF to `results/`. It also builds:
+
+- `results/summary.csv`: one row per PDF with its status (`ok`, `skipped`
+  for scans and non-PDFs, or `error`), key fields, and any error message
+- `results/concentrations.csv`: one row per extracted concentration value,
+  with the PDF it came from
+- `results/projects.csv`: one row per PDF that was read, with address,
+  conclusion, conclusion quote, summary, emission sources, mitigation and
+  whether an E-designation is mentioned. `detail_level` sorts each PDF into
+  `full analysis` (reports concentrations), `screened / qualitative`
+  (discusses air quality without numbers) or `short notice` (3 pages or
+  fewer), with full analyses listed first. Rebuild it on its own with
+  `python projects.py results`.
+
+[DATA_DICTIONARY.md](DATA_DICTIONARY.md) explains every column and how to
+read the scenarios and values.
+
+You can stop it at any time with Ctrl+C. Running the same command again skips
+PDFs that already finished. Add `--retry-errors` to re-run the ones that
+failed. Rate-limit and overload errors (429, 503) are retried automatically
+with increasing waits. `--delay` sets the pause between PDFs (default 5
+seconds) to stay under the free tier's rate limit.
+
+### Choosing which PDFs to run
+
+File names start with the CEQR number: `22DCP188Q` is fiscal year 2022,
+Department of City Planning. You can filter on that:
+
+```
+python batch.py "D:/easpdfs" --min-year 2010 --max-year 2027 --agency DCP DEP
+```
+
+Files whose names don't follow this pattern are left out when a filter is
+set.
+
+### Estimating a run first
+
+`--dry-run` checks every matching PDF for embedded text and prints how many
+are text PDFs (each needs one Gemini call) and how many are scans (skipped).
+It makes no API calls:
+
+```
+python batch.py "D:/easpdfs" --min-year 2010 --dry-run
+```
+
+During a real run, each result records how many seconds and tokens it took,
+and the run ends by printing the averages. Multiply them by the dry-run's text
+count to estimate the full run's time and cost.
+
+### Page selection (saves tokens)
+
+PDFs over 15 pages are trimmed before sending: the first 3 pages (project
+info), every page that mentions air quality terms or the review's conclusion,
+and the page(s) after each match. If a PDF contains concentration units
+(µg/m³, ppm), all of its matching pages are kept, plus 2 pages after each, so
+air quality tables are sent in full. Concentration `page` numbers are mapped
+back to the original PDF.
+
+In testing, a 282-page form with no air quality data went from 325,000 to
+17,000 tokens with the same results, and an 85-page EAS with air quality
+tables kept every table page and found the same values. Use `--all-pages` to
+send whole PDFs instead (Gemini rejects PDFs over 1,000 pages).
+
+Each result records `total_pages`, `pages_sent`, `tokens` and an estimated
+`cost_usd` (prices are set at the top of `wrapper.py`).
+
+`--budget 18` stops the run once the estimated cost of everything in the
+output folder reaches $18. PDFs already in progress still finish, so it can go
+slightly over. The estimate isn't a bill: check real spend on the billing page.
+
+### Speed and order
+
+- PDFs are processed newest fiscal year first.
+- `--workers 3` processes 3 PDFs at the same time. Use this only on a paid
+  API key; the free tier's rate limits are too low.
+- `--limit 10` stops after 10 PDFs, which is useful for a test run.
+- With more than one worker, Ctrl+C lets the PDFs already in progress finish
+  before stopping (up to 5 minutes). Press Ctrl+C again to quit immediately;
+  those PDFs will be redone on the next run.
+
+`results/` and PDFs are in `gpt-wrapper/.gitignore`, so they won't be
+committed.
