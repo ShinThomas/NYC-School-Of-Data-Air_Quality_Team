@@ -16,3 +16,6 @@ aermod_source_v26135/
 # Python cache
 __pycache__/
 .ipynb_checkpoints/
+
+# macOS system files
+.DS_Store

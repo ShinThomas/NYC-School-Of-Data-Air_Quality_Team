@@ -1,0 +1,3 @@
+# Batch output and input PDFs (local only)
+results/
+*.pdf
