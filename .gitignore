@@ -1,15 +1,18 @@
-# Local environment and credentials
-.env
-.env.*
-!.env.example
+# Large raw datasets
+Datas/
+Unused Data/
+
+# Ignore Aermod
+FirstSimulation/
+SampleRun/
+aermod_source_v26135/
+
+# Python environment
 .venv/
-venv/
 
-# Python caches
+# Secrets
+.env
+
+# Python cache
 __pycache__/
-*.py[cod]
 .ipynb_checkpoints/
-
-# Operating system files
-.DS_Store
-Thumbs.db
