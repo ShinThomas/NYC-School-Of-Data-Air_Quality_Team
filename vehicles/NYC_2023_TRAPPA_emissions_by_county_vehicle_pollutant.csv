@@ -1,0 +1,126 @@
+County,Borough,TRAPPA Vehicle Type,Pollutant,2023 Emissions (tons/year)
+Bronx,Bronx,Bus,NH3,6.45165755397
+Bronx,Bronx,Bus,NOX,171.77802643418
+Bronx,Bronx,Bus,PM25-PRI,3.39382741819
+Bronx,Bronx,Bus,SO2,0.3147222852919
+Bronx,Bronx,Bus,VOC,22.23845191358
+Bronx,Bronx,Car,NH3,165.47984027709998
+Bronx,Bronx,Car,NOX,331.0808416131
+Bronx,Bronx,Car,PM25-PRI,34.82606505733
+Bronx,Bronx,Car,SO2,10.64386929729
+Bronx,Bronx,Car,VOC,561.830783585
+Bronx,Bronx,Heavy Truck,NH3,12.239703259999999
+Bronx,Bronx,Heavy Truck,NOX,541.8871323000001
+Bronx,Bronx,Heavy Truck,PM25-PRI,19.962595171
+Bronx,Bronx,Heavy Truck,SO2,0.6528595277
+Bronx,Bronx,Heavy Truck,VOC,21.941522109999998
+Bronx,Bronx,Medium Truck,NH3,6.879307689999999
+Bronx,Bronx,Medium Truck,NOX,209.43725690000002
+Bronx,Bronx,Medium Truck,PM25-PRI,8.67589801
+Bronx,Bronx,Medium Truck,SO2,0.49384973400000004
+Bronx,Bronx,Medium Truck,VOC,24.9857171
+Bronx,Bronx,Small Commercial Truck,NH3,7.1564388892999995
+Bronx,Bronx,Small Commercial Truck,NOX,33.9252046337
+Bronx,Bronx,Small Commercial Truck,PM25-PRI,2.3187177574
+Bronx,Bronx,Small Commercial Truck,SO2,0.56009504659
+Bronx,Bronx,Small Commercial Truck,VOC,22.5162365359
+Kings,Brooklyn,Bus,NH3,7.943980346
+Kings,Brooklyn,Bus,NOX,211.901216145
+Kings,Brooklyn,Bus,PM25-PRI,6.234753286
+Kings,Brooklyn,Bus,SO2,0.47822802474
+Kings,Brooklyn,Bus,VOC,24.604819257
+Kings,Brooklyn,Car,NH3,240.5327028099
+Kings,Brooklyn,Car,NOX,513.1283493595
+Kings,Brooklyn,Car,PM25-PRI,57.5913674855
+Kings,Brooklyn,Car,SO2,15.67268470144
+Kings,Brooklyn,Car,VOC,1007.943867279
+Kings,Brooklyn,Heavy Truck,NH3,11.55392348
+Kings,Brooklyn,Heavy Truck,NOX,593.25423128
+Kings,Brooklyn,Heavy Truck,PM25-PRI,22.912520552
+Kings,Brooklyn,Heavy Truck,SO2,0.6606232864
+Kings,Brooklyn,Heavy Truck,VOC,23.93178285
+Kings,Brooklyn,Medium Truck,NH3,9.666675439999999
+Kings,Brooklyn,Medium Truck,NOX,323.5590824
+Kings,Brooklyn,Medium Truck,PM25-PRI,13.615914068
+Kings,Brooklyn,Medium Truck,SO2,0.700049323
+Kings,Brooklyn,Medium Truck,VOC,42.8724831
+Kings,Brooklyn,Small Commercial Truck,NH3,12.2223271275
+Kings,Brooklyn,Small Commercial Truck,NOX,64.4701400141
+Kings,Brooklyn,Small Commercial Truck,PM25-PRI,4.4023009278
+Kings,Brooklyn,Small Commercial Truck,SO2,0.94613973328
+Kings,Brooklyn,Small Commercial Truck,VOC,47.975036161
+New York,Manhattan,Bus,NH3,5.619656417
+New York,Manhattan,Bus,NOX,144.313148094
+New York,Manhattan,Bus,PM25-PRI,3.98704004862
+New York,Manhattan,Bus,SO2,0.316729034489
+New York,Manhattan,Bus,VOC,14.4264457251
+New York,Manhattan,Car,NH3,148.5231027103
+New York,Manhattan,Car,NOX,277.6782997056
+New York,Manhattan,Car,PM25-PRI,33.35656357796
+New York,Manhattan,Car,SO2,9.57520611909
+New York,Manhattan,Car,VOC,505.074186978
+New York,Manhattan,Heavy Truck,NH3,9.62480128
+New York,Manhattan,Heavy Truck,NOX,569.60912338
+New York,Manhattan,Heavy Truck,PM25-PRI,22.977823504000003
+New York,Manhattan,Heavy Truck,SO2,0.5482936274
+New York,Manhattan,Heavy Truck,VOC,21.7623278
+New York,Manhattan,Medium Truck,NH3,6.102548710000001
+New York,Manhattan,Medium Truck,NOX,194.9043288
+New York,Manhattan,Medium Truck,PM25-PRI,8.079243186000001
+New York,Manhattan,Medium Truck,SO2,0.438686232
+New York,Manhattan,Medium Truck,VOC,24.843120900000002
+New York,Manhattan,Small Commercial Truck,NH3,13.9895939583
+New York,Manhattan,Small Commercial Truck,NOX,66.5619350164
+New York,Manhattan,Small Commercial Truck,PM25-PRI,4.7014859001
+New York,Manhattan,Small Commercial Truck,SO2,1.09598325165
+New York,Manhattan,Small Commercial Truck,VOC,44.746881316
+Queens,Queens,Bus,NH3,11.150312214
+Queens,Queens,Bus,NOX,274.67880625
+Queens,Queens,Bus,PM25-PRI,10.222224478000001
+Queens,Queens,Bus,SO2,0.77564594966
+Queens,Queens,Bus,VOC,30.17332554
+Queens,Queens,Car,NH3,359.066431716
+Queens,Queens,Car,NOX,787.992575533
+Queens,Queens,Car,PM25-PRI,81.0461557129
+Queens,Queens,Car,SO2,23.204962498420002
+Queens,Queens,Car,VOC,1498.185204053
+Queens,Queens,Heavy Truck,NH3,22.7758864
+Queens,Queens,Heavy Truck,NOX,1083.1781314300001
+Queens,Queens,Heavy Truck,PM25-PRI,40.403449662999996
+Queens,Queens,Heavy Truck,SO2,1.3006899564
+Queens,Queens,Heavy Truck,VOC,43.25051604
+Queens,Queens,Medium Truck,NH3,15.842902910000001
+Queens,Queens,Medium Truck,NOX,510.75852499999996
+Queens,Queens,Medium Truck,PM25-PRI,20.674203211000002
+Queens,Queens,Medium Truck,SO2,1.1448331040000002
+Queens,Queens,Medium Truck,VOC,72.2341302
+Queens,Queens,Small Commercial Truck,NH3,26.620149660000003
+Queens,Queens,Small Commercial Truck,NOX,134.632852232
+Queens,Queens,Small Commercial Truck,PM25-PRI,9.052256847299999
+Queens,Queens,Small Commercial Truck,SO2,2.0994309045999997
+Queens,Queens,Small Commercial Truck,VOC,99.153484859
+Richmond,Staten Island,Bus,NH3,3.116378041
+Richmond,Staten Island,Bus,NOX,77.476707403
+Richmond,Staten Island,Bus,PM25-PRI,2.8270846632000004
+Richmond,Staten Island,Bus,SO2,0.21611318661
+Richmond,Staten Island,Bus,VOC,8.658598114
+Richmond,Staten Island,Car,NH3,95.5103631611
+Richmond,Staten Island,Car,NOX,246.35867830509997
+Richmond,Staten Island,Car,PM25-PRI,22.4970195805
+Richmond,Staten Island,Car,SO2,6.3408083173400005
+Richmond,Staten Island,Car,VOC,485.290167404
+Richmond,Staten Island,Heavy Truck,NH3,5.53528403
+Richmond,Staten Island,Heavy Truck,NOX,243.27735372
+Richmond,Staten Island,Heavy Truck,PM25-PRI,8.558618051
+Richmond,Staten Island,Heavy Truck,SO2,0.31563865280000003
+Richmond,Staten Island,Heavy Truck,VOC,9.70650606
+Richmond,Staten Island,Medium Truck,NH3,4.36091427
+Richmond,Staten Island,Medium Truck,NOX,138.3791675
+Richmond,Staten Island,Medium Truck,PM25-PRI,5.88805948
+Richmond,Staten Island,Medium Truck,SO2,0.312955404
+Richmond,Staten Island,Medium Truck,VOC,17.5182789
+Richmond,Staten Island,Small Commercial Truck,NH3,2.8864471824
+Richmond,Staten Island,Small Commercial Truck,NOX,16.0212483231
+Richmond,Staten Island,Small Commercial Truck,PM25-PRI,1.04423062824
+Richmond,Staten Island,Small Commercial Truck,SO2,0.2251233437
+Richmond,Staten Island,Small Commercial Truck,VOC,12.6033471768
