@@ -1,0 +1,38 @@
+from pathlib import Path
+import pandas as pd
+
+folder = Path(__file__).resolve().parent
+input_csv = folder / "traffic_trappa_cleaned.csv"
+output_csv = folder / "traffic_trappa_grouped_by_project.csv"
+
+df = pd.read_csv(input_csv, dtype=str)
+
+# Remove columns you don't need.
+df = df.drop(columns=[
+    "with_action", "no_action", "vehicle_type_as_written",
+    "measure", "period", "location", "detail"
+], errors="ignore")
+
+# Convert these two columns to numbers before adding them.
+for col in ["increment", "change"]:
+    df[col] = pd.to_numeric(df[col], errors="coerce")
+
+# Preserve every distinct label rather than picking one vehicle type arbitrarily.
+def combine(values):
+    labels = (str(v).strip() for v in values.dropna())
+    return "; ".join(dict.fromkeys(v for v in labels if v))
+
+# One row per project: sum numbers, combine other columns.
+agg = {col: combine for col in df.columns
+       if col not in ["project_name", "increment", "change"]}
+agg.update({
+    "increment": lambda values: values.sum(min_count=1),
+    "change": lambda values: values.sum(min_count=1),
+})
+
+result = df.groupby("project_name", as_index=False, dropna=False).agg(agg)
+result.to_csv(output_csv, index=False)
+
+print(f"Original rows: {len(df)}")
+print(f"Grouped rows: {len(result)}")
+print(f"Saved: {output_csv.name}")
